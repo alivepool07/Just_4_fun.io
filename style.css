@@ -1,0 +1,124 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background:#ffffff ;
+  margin: 0; /* Remove default margin */
+}
+
+
+#yesButton {
+  position: absolute;
+  left: 50%; /* Center the buttons initially */
+  transform: translateX(-50%); /* Centering trick */
+  margin-top: 30px;
+  transition: 0.5s;
+}
+
+#noButton {
+  margin-top: 30px; /* Adjusted spacing */
+  position: absolute;
+  transition: 0.5s;
+
+  /* margin-top: 3 rem; */
+}
+.row{
+
+  left :50%;
+}
+#yesButton {
+  margin-right: 10px;
+}
+
+.header_text {
+  font-family: "Nunito";
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:  #2c3e50;
+}
+
+.text {
+  font-family: "Nunito";
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #017cff;
+  color: white;
+  font-weight: 600;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 0; /* Adjusted margin */
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  transition: left 0.5s, top 0.5s;
+  box-shadow: 0 3px 3px black;
+}
+.container {
+  /* background-color: #f0f0f0; */
+  padding: 20px;
+  border-radius: 10px;
+}
+.btn:hover {
+  background-color: #ffffff;
+  color: #017cff;
+}
+
+.gif_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: white;
+  text-align: center;
+}
+
+p a {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.25;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+  #noButton,
+  #yesButton {
+    position: static;
+    margin-top: 10px;
+  }
+
+  #noButton,
+  #yesButton,
+  .buttons {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin: 4px 0;
+  }
+}

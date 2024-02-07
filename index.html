@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Loader element -->
+  <div id="loader"></div>
+
+  <div class="container">
+    <div>
+      <h1 class="header_text">Shall we go for a dinner date  QT 🥰 👉🏼👈🏼</h1>
+    </div>
+    <p>
+      <br>
+    </p>
+    <div class="gif_container">
+      <img
+        src="https://i.postimg.cc/pdNqPxx1/milk-and-mocha-cute.gif"
+        alt="Cute animated illustration"
+      />
+    </div>
+    <div class="buttons">
+      <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+      <button
+        class="btn"
+        id="noButton"
+        onmouseover="moveButton()"
+        onclick="moveButton()"
+      >
+        No
+      </button>
+    </div>
+    <!-- Add an audio element for the song -->
+    <audio id="backgroundMusic" loop>
+      <source src="song2.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <script>
+    var songPlayed = false; // Flag to track if the song has been played
+
+    // Function to hide the loader
+    function hideLoader() {
+      var loader = document.getElementById("loader");
+      loader.style.display = "none";
+    }
+
+    function nextPage() {
+      // Show loader before navigating to the next page
+      var loader = document.getElementById("loader");
+      loader.style.display = "block";
+
+      setTimeout(function() {
+        window.location.href = "yes.html";
+      }, 1000); // Set a timeout for demonstration purposes; adjust as needed
+    }
+
+    function moveButton() {
+      if (!songPlayed) {
+        playSong();
+        songPlayed = true;
+      }
+
+      var button = document.getElementById("noButton");
+      var x = Math.random() * (window.innerWidth - button.offsetWidth);
+      var y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+      // Adjusting the position to ensure the button stays within the visible area
+      x = Math.max(0, Math.min(x, window.innerWidth - button.offsetWidth));
+      y = Math.max(0, Math.min(y, window.innerHeight - button.offsetHeight));
+
+      button.style.left = `${x}px`;
+      button.style.top = `${y}px`;
+    }
+
+    function playSong() {
+      var audio = document.getElementById("backgroundMusic");
+
+      // Ensure the audio is loaded before attempting to play
+      audio.addEventListener('canplaythrough', function() {
+        audio.play();
+      });
+
+      // If for some reason 'canplaythrough' event doesn't fire, attempt to play after a delay
+      setTimeout(function() {
+        audio.play();
+      }, 500);
+    }
+  </script>
+</body>
+</html>

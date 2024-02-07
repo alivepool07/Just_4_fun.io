@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Yeeyy! Finally</h1>
+      </div>
+      <div class="gif_container">
+        <img
+          src="https://i.postimg.cc/wTDG30TB/yes.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="openWhatsApp()">
+          Let's Fix a Date
+        </button>
+      </div>
+    </div>
+    <script>
+      function openWhatsApp() {
+        // Replace '1234567890' with the actual phone number
+        var phoneNumber = '+917320095384';
+
+        // Replace 'Hello%20Let%27s%20fix%20a%20date!' with your custom text encoded
+        var customText = 'Hello Let\'s fix a date!';
+        var encodedText = encodeURIComponent(customText);
+
+        // Create the WhatsApp link with custom text
+        var whatsappLink = 'https://wa.me/' + phoneNumber + '?text=' + encodedText;
+
+        // Open WhatsApp link in a new window or tab
+        window.open(whatsappLink);
+      }
+    </script>
+  </body>
+</html>
